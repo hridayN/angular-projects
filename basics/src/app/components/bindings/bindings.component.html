@@ -1,0 +1,14 @@
+<!-- Property binding -->
+<!-- <input type="text" [id]="myId" value="hriday">
+
+// Property binding using interpolation 
+<input type="text" id="{{myId}}" value="hriday"> -->
+
+<!-- here, the mere presence of disabled attribute sets the input as disabed, without even checking if it is true or false -->
+<input type="text" disabled="false"  value="hriday">
+
+<!-- We need to bind our disabled attribute to some property, we do so by Property Binding -->
+<input type="text" [disabled]="false" value="hriday">
+
+<!-- Use of bind-attribute for binding -->
+<input type="text" bind-disabled="false" value="hriday">
