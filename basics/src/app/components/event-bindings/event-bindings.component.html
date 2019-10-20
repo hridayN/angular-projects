@@ -1,0 +1,11 @@
+<!-- Event bindings -->
+
+
+<!-- usage: (eventType)="variable='value' or value" -->
+<!-- <button (click)="greeting='Weclome hriday'">Click</button> {{greeting}} -->
+
+<!-- Templat reference variables: #variableName -->
+<input type="text" #message>
+
+<!-- logMessage.value is template reference variable's value -->
+<button (click)="logMessage(message.value)"> Log </button>
