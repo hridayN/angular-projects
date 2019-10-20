@@ -1,0 +1,38 @@
+<!-- structural-directives  -->
+
+<p>Structural-Directives</p>
+
+<!-- Usage 1 of *ngIf -->
+<!-- *ngIf="truthy condition", if set to false, will remove the html element from the DOM -->
+<!-- <h2 *ngIf="display">Display</h2> -->
+
+<!-- Usage 2 of *ngIf -->
+<!-- *ngIf="truthy condition; else else condition render another template, defined in ng-template" -->
+<!-- ng-template is a container for various HTML elements, for conditional rendering of those elements -->
+<!-- <h2 *ngIf="display; else elseBlock"> {{name}} </h2>
+
+<ng-template #elseBlock>
+    <h2>
+        name is hidden, as display set to false
+    </h2>
+</ng-template> -->
+
+<!-- Usage 3 of *ngIf -->
+<!-- if display is true, thenBlock will be rendered, else elseBlock will be rendered -->
+<!-- <div *ngIf="display; then thenBlock; else elseBlock"> {{name}} </div>
+
+<ng-template #thenBlock>
+    <h2> Name hidden, Content displaying... </h2>
+</ng-template>
+
+<ng-template #elseBlock>
+    <h2> Content hidden </h2>
+</ng-template> -->
+
+<!-- ngSwitch: [ngSwitch]="property" -->
+<div [ngSwitch]="color">
+    <div *ngSwitchCase="'red'" class="text-red">Red Color</div>
+    <div *ngSwitchCase="'blue'" class="text-blue">Blue Color</div>
+    <div *ngSwitchCase="'green'" class="text-green">Green Color</div>
+    <div *ngSwitchDefault>Black Color</div>
+</div>
