@@ -10,6 +10,7 @@ export class StructuralDirectivesComponent implements OnInit {
   display = false;
   name = 'Hriday';
   color = 'yellow';
+  colors = [ 'red', 'blue', 'green', 'yellow' ];
   constructor() { }
 
   ngOnInit() {
