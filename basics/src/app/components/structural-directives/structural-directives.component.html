@@ -30,9 +30,14 @@
 </ng-template> -->
 
 <!-- ngSwitch: [ngSwitch]="property" -->
-<div [ngSwitch]="color">
+<!-- <div [ngSwitch]="color">
     <div *ngSwitchCase="'red'" class="text-red">Red Color</div>
     <div *ngSwitchCase="'blue'" class="text-blue">Blue Color</div>
     <div *ngSwitchCase="'green'" class="text-green">Green Color</div>
     <div *ngSwitchDefault>Black Color</div>
+</div> -->
+
+<!-- *ngFor -->
+<div *ngFor="let color of colors; index as i">
+    <h2>{{i}} {{color}} </h2>
 </div>
