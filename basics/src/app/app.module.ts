@@ -11,6 +11,8 @@ import { TwoWayBindingComponent } from './components/two-way-binding/two-way-bin
 import { StructuralDirectivesComponent } from './components/structural-directives/structural-directives.component';
 import { ParentComponent } from './components/parent/parent.component';
 import { ChildComponent } from './components/child/child.component';
+import { EmployeeComponent } from './components/employee/employee.component';
+import { EmployeeService } from './services/employee.service';
 
 @NgModule({
   declarations: [
@@ -23,13 +25,14 @@ import { ChildComponent } from './components/child/child.component';
     TwoWayBindingComponent,
     StructuralDirectivesComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    EmployeeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ EmployeeService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
