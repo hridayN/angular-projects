@@ -1,2 +1,6 @@
-<!-- we bind the property, name here, with the same name which will be used by child component as Input from parent -->
-<app-child [parentData]="name"></app-child>
+<!-- we bind the property, name here, 
+    with the same name which will be used by child component
+    as Input from parent -->
+    <!-- (propertyNameEmittedByChild)="ourProperty=" -->
+   <div *ngIf="message !== ''"> Message from child: '{{message}}' </div>
+<app-child (childEvent)="message=$event" [parentData]="name"></app-child>
