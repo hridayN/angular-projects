@@ -1,0 +1,21 @@
+<h3>Parent Component</h3>
+<!-- <app-child [loggedIn]="userLoggedInState"></app-child> -->
+<!-- <button *ngIf="!userLoggedInState" (click)="login();"> LOGIN </button>
+<button *ngIf="userLoggedInState" (click)="logout();"> LOGOUT </button> -->
+<!-- <app-child #child> {{child.name}} </app-child>
+<div>
+    <button (click)="child.greet();"> GREET </button>
+</div> -->
+
+<!-- <app-child></app-child>
+<div>
+    <button (click)="greet();"> GREET </button>
+</div> -->
+
+<!-- <app-child (greetings)="greetingsFromChild($event);"></app-child> -->
+
+<div>
+    <button (click)="greetChild();"> GREET CHILD </button>
+    <button (click)="appreciateChild();"> APPRECIATE CHILD </button>
+</div>
+<app-child></app-child>

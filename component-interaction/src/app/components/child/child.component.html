@@ -1,0 +1,22 @@
+<h4>Child Component</h4>
+
+<!-- <div style="border: 2px solid black;">
+    <h3>Child Component</h3>
+    <p *ngIf="loggedIn"> Welcome back... </p>
+    <p *ngIf="!loggedIn"> Please Login </p>
+</div> -->
+
+<!-- <div style="border: 2px solid black;">
+    <h3>Child Component</h3>
+    {{message}}; LoggedIn: {{loggedIn}}
+</div> -->
+
+<!-- <div style="border: 2px solid black;">
+    <h3>Child Component</h3>
+    <button (click)="greetParent();">GREET</button>
+</div> -->
+
+<div *ngIf="message && message !== ''">
+    <p>Message from parent {{message}}</p>
+    <button (click)="intimateParent()"> Intimate Parent </button>
+</div>
