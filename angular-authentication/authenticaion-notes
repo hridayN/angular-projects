@@ -1,4 +1,0 @@
-1 	npm install express body-parser --save: to install the dependencies
-	- express: server; 
-	- body-parser: is a middleware to handle formdata such as login/registration;
-	
