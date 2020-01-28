@@ -1,0 +1,20 @@
+CREATE PROCEDURE AddUserAccount
+@UserName	VARCHAR(256),
+@Email		VARCHAR(120),
+@Password	VARCHAR(MAX)
+
+AS 
+	BEGIN 
+	INSERT INTO [dbo].[TestUser] (
+	[UserName],
+	[Email],
+	[Password]
+	) VALUES (
+		@UserName,
+		@Email,
+		@Password
+	);
+	END
+GO
+
+-- SELECT * FROM [dbo].[TestUser]
