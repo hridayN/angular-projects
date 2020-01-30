@@ -1,53 +1,44 @@
-<div class="row">
-<div class="col s8 offset-s2">
-    <div class="card">
-      <div class="lg jumbotron center-align">
-        <h3 class="heading">User Registration</h3>
-      </div>
+<form class="col s12 white" #userRegistrationForm="ngForm">
+  <div class="row">
+    <div class="input-field col s6">
+      <label>First Name</label> 
+      <input class="validate" type="text" #firstName="ngModel" name="firstName" [(ngModel)]="user.firstName" required>
+      <span class="validator">First Name is required!</span>
     </div>
-    <form class="col s12 white" #userRegistrationForm="ngForm">
-      <div class="row">
-        <div class="input-field col s6">
-          <label>First Name</label> 
-          <input class="validate" type="text" #firstName="ngModel" name="firstName" [(ngModel)]="user.firstName" required>
-          <span class="validator">First Name is required!</span>
-        </div>
-        <div class="input-field col s6">
-          <label>Last Name</label>
-          <input class="validate" type="text" #lastName="ngModel" name="lastName" [(ngModel)]="user.lastName" required>
-          <span class="validator">Last Name is required!</span>
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="input-field col s12">
-          <label>Email</label> 
-          <input class="validate" type="text" #email="ngModel" name="email" [(ngModel)]="user.email" required>
-          <span class="validator">Email is required!</span>
-        </div>
-      </div>
+    <div class="input-field col s6">
+      <label>Last Name</label>
+      <input class="validate" type="text" #lastName="ngModel" name="lastName" [(ngModel)]="user.lastName" required>
+      <span class="validator">Last Name is required!</span>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="input-field col s12">
+      <label>Email</label> 
+      <input class="validate" type="text" #email="ngModel" name="email" [(ngModel)]="user.email" required>
+      <span class="validator">Email is required!</span>
+    </div>
+  </div>
 
-      <div class="row">
-        <div class="input-field col s6">
-          <label>User Name</label> 
-          <input class="validate" type="text" #userName="ngModel" name="userName" [(ngModel)]="user.userName" required>
-          <span class="validator">User Name is required!</span>
-        </div>
-        <div class="input-field col s6">
-          <label>Password</label> 
-          <input class="validate" type="password" #password="ngModel" name="password" [(ngModel)]="user.password" required>
-          <span class="validator">Password is required!</span>
-        </div>
-      </div>
+  <div class="row">
+    <div class="input-field col s6">
+      <label>User Name</label> 
+      <input class="validate" type="text" #userName="ngModel" name="userName" [(ngModel)]="user.userName" required>
+      <span class="validator">User Name is required!</span>
+    </div>
+    <div class="input-field col s6">
+      <label>Password</label> 
+      <input class="validate" type="password" #password="ngModel" name="password" [(ngModel)]="user.password" required>
+      <span class="validator">Password is required!</span>
+    </div>
+  </div>
 
-      <div class="row">
-        <div class="input-field col s12">
-          <span> 
-            <button class="btn btn-submit" type="submit" (click)="resetForm(userRegistrationForm);">RESET</button> 
-            <button class="btn btn-submit" type="submit" (click)="submitForm(userRegistrationForm);">SUBMIT</button>
-          </span>
-        </div>
-      </div>
-    </form>
-</div>
-</div>
+  <div class="row">
+    <div class="input-field col s12">
+      <span> 
+        <button class="btn btn-submit" type="submit" (click)="resetForm(userRegistrationForm);">RESET</button> 
+        <button class="btn btn-submit" type="submit" (click)="submitForm(userRegistrationForm);">SUBMIT</button>
+      </span>
+    </div>
+  </div>
+</form>

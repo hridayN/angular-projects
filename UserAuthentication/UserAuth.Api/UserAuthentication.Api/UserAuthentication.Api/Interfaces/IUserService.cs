@@ -9,6 +9,6 @@ namespace UserAuthentication.Api.Interfaces
 {
     public interface IUserService
     {
-        List<string> RegisterUser(User user);
+        string RegisterUser(User user);
     }
 }

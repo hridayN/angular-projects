@@ -1,0 +1,8 @@
+Packages:
+- API: 
+1. microsoft.aspnet.identity.owin
+2. Microsoft.Owin.Host.SystemWeb
+3. Microsoft.Owin.Cors
+
+Extra special classes: 
+Owin class

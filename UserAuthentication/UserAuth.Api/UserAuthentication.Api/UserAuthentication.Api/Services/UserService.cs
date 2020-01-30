@@ -12,9 +12,9 @@ namespace UserAuthentication.Api.Services
 {
     public class UserService : IUserService
     {
-        public List<string> RegisterUser(User user)
+        public string RegisterUser(User user)
         {
-            List<string> list = new List<string>();
+            string response = "";
             var parameterList = new List<IDbDataParameter>
             {
                 new SqlParameter() { ParameterName = "@UserName", Value = user.userName, SqlDbType = SqlDbType.VarChar },
@@ -32,8 +32,8 @@ namespace UserAuthentication.Api.Services
                 cmd.Connection = sqlConnection;
                 cmd.ExecuteNonQuery();
             }
-            list.Add("User Registered");
-            return list;
+            response = "Success";
+            return response;
         }
     }
 }
