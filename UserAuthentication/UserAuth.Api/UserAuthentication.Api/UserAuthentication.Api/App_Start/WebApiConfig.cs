@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Microsoft.Owin;
+using Microsoft.Owin.Security.OAuth;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
-
 namespace UserAuthentication.Api
 {
     public static class WebApiConfig
@@ -22,8 +23,9 @@ namespace UserAuthentication.Api
             );
 
             // Enable cors
-            var cors = new EnableCorsAttribute("*", "*", "*");
-            config.EnableCors(cors);
+            config.EnableCors(new EnableCorsAttribute("*", "*", "*"));
+
+            
         }
     }
 }
