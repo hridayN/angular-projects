@@ -3,6 +3,7 @@ Packages:
 1. microsoft.aspnet.identity.owin
 2. Microsoft.Owin.Host.SystemWeb
 3. Microsoft.Owin.Cors
+4. Microsoft.AspNet.WebApi.Owin.5.2.7
 
 Extra special classes: 
 Owin class

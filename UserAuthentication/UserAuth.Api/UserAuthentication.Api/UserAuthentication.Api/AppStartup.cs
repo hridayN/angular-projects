@@ -1,9 +1,14 @@
 ﻿using System;
-using System.Threading.Tasks;
 using Microsoft.Owin;
 using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
+using System.Web.Http;
+using System.Data.SqlClient;
+using UserAuthentication.Api.Services;
+using System.Data;
+using System.Collections.Generic;
+using UserAuthentication.Api.Models;
 
 [assembly: OwinStartup(typeof(UserAuthentication.Api.AppStartup))]
 
@@ -20,10 +25,15 @@ namespace UserAuthentication.Api
             OAuthAuthorizationServerOptions options = new OAuthAuthorizationServerOptions
             {
                 TokenEndpointPath = new PathString("/token"),
-                // Provider = new ApplicationOAuthProvider(),
+                Provider = new AppOAuthProvider(),
                 AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(10),
                 AllowInsecureHttp = true
             };
+
+            app.UseOAuthAuthorizationServer(options);
+
+            HttpConfiguration config = new HttpConfiguration();
+            app.UseWebApi(config);
         }
     }
 }

@@ -20,23 +20,17 @@ namespace UserAuthentication.Api
         }
 
         // Authenticate user based on credentials
-        public override Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context) {
+        public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context) {
             var user = GetUserDbService().FindUser(context.UserName, context.Password);
 
-            var identity = new ClaimsIdentity("JWT");
-            identity.AddClaim(new Claim(ClaimTypes.Name, user.email));
-
-            var props = new AuthenticationProperties
-            (
-                new Dictionary<string, string>
-                {
-                    { "userName", (context.UserName == null) ? string.Empty : context.UserName }
-                }
-            );
-
-            var ticket = new AuthenticationTicket(identity, props);
-            context.Validated(ticket);
-            return Task.FromResult<object>(null);
+            if (user != null)
+            {
+                var identity = new ClaimsIdentity(context.Options.AuthenticationType);
+                identity.AddClaim(new Claim("Username", user.userName));
+                identity.AddClaim(new Claim("Email", user.email));
+                identity.AddClaim(new Claim("LoggenOn", DateTime.Now.ToString()));
+                context.Validated(identity);
+            } else return;
         }
 
         private ILoginService GetUserDbService()

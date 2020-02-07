@@ -20,7 +20,8 @@ namespace UserAuthentication.Api.Services
                 new SqlParameter() { ParameterName = "@Password", Value = password, SqlDbType = SqlDbType.VarChar }
             };
 
-            SqlDataReader dbSet;
+            User user = new User();
+
             using (SqlConnection sqlConnection = DbHelperService.GetConnection())
             {
                 sqlConnection.Open();
@@ -29,15 +30,20 @@ namespace UserAuthentication.Api.Services
                 cmd.CommandText = "[dbo].[AddUserAccount]";
                 cmd.Parameters.AddRange(parameterList.ToArray());
                 cmd.Connection = sqlConnection;
-                dbSet = cmd.ExecuteReader();
 
-                //if (dbSet.HasRows)
-                //{
-                //    User user = new User();
-                //    user.
-                //}
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
+                DataSet dataSet = new DataSet();
+                dataAdapter.Fill(dataSet);
+
+                if (dataSet != null && dataSet.Tables.Count > 0)
+                {
+                    user.userName = dataSet.Tables[0].Rows[0]["userName"].ToString();
+                    user.firstName = dataSet.Tables[0].Rows[0]["firstName"].ToString();
+                    user.lastName = dataSet.Tables[0].Rows[0]["lastName"].ToString();
+                    user.email = dataSet.Tables[0].Rows[0]["email"].ToString();
+                }
             }
-            return (new User());
+            return user;
         }
     }
 }
