@@ -4,11 +4,6 @@ using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 using System.Web.Http;
-using System.Data.SqlClient;
-using UserAuthentication.Api.Services;
-using System.Data;
-using System.Collections.Generic;
-using UserAuthentication.Api.Models;
 
 [assembly: OwinStartup(typeof(UserAuthentication.Api.AppStartup))]
 

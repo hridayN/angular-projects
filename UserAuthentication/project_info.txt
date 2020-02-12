@@ -1,9 +1,18 @@
+
+
 Packages:
 - API: 
-1. microsoft.aspnet.identity.owin
-2. Microsoft.Owin.Host.SystemWeb
-3. Microsoft.Owin.Cors
-4. Microsoft.AspNet.WebApi.Owin.5.2.7
-
+	Owin- 5.2.7
+	Microsoft.AspNet.WebApi.Core- 5.2.7
+	Microsoft.AspNet.Identity.Owin- 2.2.3
+	
 Extra special classes: 
 Owin class
+
+Structure:
+1. Server side-(Version: .net framework 4.5)	
+	Contract- Contains all the interfaces for the project
+	Core	- Contains all the services for the project
+	Domain	- Contains all the models for the project
+	DB_Scripts- Contains all the database scripts for the project
+	DB_Helper- Contains all the methods required for DB Connection
