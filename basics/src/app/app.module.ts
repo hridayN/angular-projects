@@ -13,6 +13,8 @@ import { ParentComponent } from './components/parent/parent.component';
 import { ChildComponent } from './components/child/child.component';
 import { EmployeeComponent } from './components/employee/employee.component';
 import { EmployeeService } from './services/employee.service';
+import { FileComponent } from './components/file/file.component';
+import { FileSizePipe } from './pipes/file-size-pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { EmployeeService } from './services/employee.service';
     StructuralDirectivesComponent,
     ParentComponent,
     ChildComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    FileComponent,
+    FileSizePipe
   ],
   imports: [
     BrowserModule,
