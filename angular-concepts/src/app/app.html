@@ -1,0 +1,22 @@
+<!-- Interpolation transforms the value of a component property into a string.
+IsDisabled: {{isDisabled}} 
+-->
+<!--
+<div class="form">
+  <div class="form-group">
+    <label for="comment">Comment</label>
+    <input name="comment" type="text" class="form-control" #comment>
+  </div>
+  <div> <button class="btn btn-primary" (click)="submit(comment.value)">Submit</button> </div>
+  <div *ngFor="let comment of comments">
+    <div>{{comment}}</div>
+  </div>
+</div>
+-->
+
+<div class="button">
+  <button class="btn btn-primary" (click)="create()" >Create</button>
+  <button class="btn btn-primary" (click)="execute()" >Execute</button>
+  <button class="btn btn-primary" (click)="cancel()" >Cancel</button>
+</div>
+<router-outlet></router-outlet>
